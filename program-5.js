@@ -37,7 +37,23 @@
 
 'use strict';
 
-const findNameOccurrences = function (arr) {};
+const findNameOccurrences = function (arr) {
+  const nameOccurrences = [];
+  arr.forEach(obj => {
+    const occurrence = {};
+    const uniqe = nameOccurrences.find(
+      el => el.employeeName === obj.employeeName
+    );
+    if (uniqe) {
+      uniqe.occurrences++;
+    } else {
+      occurrence.employeeName = obj.employeeName;
+      occurrence.occurrences = 1;
+      nameOccurrences.push(occurrence);
+    }
+  });
+  return nameOccurrences;
+};
 
 const arr = [
   {
