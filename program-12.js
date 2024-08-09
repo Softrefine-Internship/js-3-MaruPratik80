@@ -14,12 +14,26 @@
 
 'use strict';
 
-const getLongestStr = arr =>
-  arr.reduce((longest, str) => {
+const getLongestStr = function (arr) {
+  const maxLength = arr.reduce((longest, str) => {
     if (str.length > longest.length) longest = str;
     return longest;
-  }, arr[0]);
+  }, arr[0]).length;
+  return arr.filter(str => str.length === maxLength).join(', ');
+};
 
 const arr = ['JavaScript', 'Python', 'Java', 'C++', 'Ruby', 'Swift'];
 const longestStr = getLongestStr(arr);
 console.log(arr, longestStr);
+
+const arr2 = [
+  'JavaScript',
+  'TypeScript',
+  'Python',
+  'Java',
+  'C++',
+  'Ruby',
+  'Swift',
+];
+console.log(arr2);
+console.log(getLongestStr(arr2));

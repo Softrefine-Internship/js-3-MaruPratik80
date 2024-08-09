@@ -8,13 +8,12 @@
 const charFrequency = function (str) {
   const frequency = {};
   str
-    .toLowerCase()
     .split('')
     .forEach(l => (frequency[l] ? frequency[l]++ : (frequency[l] = 1)));
   return frequency;
 };
 
-const input = 'hello';
+const input = 'helloOOO';
 const output = charFrequency(input);
 
 console.log(input);
